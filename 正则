@@ -1,0 +1,41 @@
+一、取URL中的参数
+
+复制代码
+查看文本打印
+function getParameterByName(name) {  
+    var match = RegExp('[?&]' + name + '=([^&]*)')  
+                    .exec(window.location.search);  
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));  
+}
+
+
+
+二、正则分组
+
+复制代码
+复制代码
+查看文本打印
+var testStr="<div><img src='/a.jpg' alt='' /><span>test</span><img src='/b.jpg' alt='' /><span>TTest</span><img src='/c.png' alt='' /></div>";  
+var reg=/<img\ssrc='(.*?)'\s+alt=''\s*\/>/g;  
+var match=reg.exec(testStr),results=[];  
+while(match != null){  
+    results.push(match[1]);  
+    match=reg.exec(testStr);  
+}  
+console.log(results);  
+/* 
+Array ["/a.jpg", "/b.jpg", "/c.png"] 
+*/ 
+
+
+
+四、jQuery中获取设置checkbox选中状态
+
+　　由于在jQuery1.6以后.attr("checked")的返回结果是 checked，所以一般用下面两种方法获取选中状态：
+
+复制代码
+查看文本打印
+$("#checkboxID").is(":checked");  
+  
+//jQuery 1.6 +  
+$("#checkboxID").prop("checked");  
