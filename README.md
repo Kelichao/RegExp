@@ -17,7 +17,9 @@
 # 1.元字符
 
  _元字符是在正则表达式中有特殊含义的非字母字符（注 ”-“ 除外）_
+ 
 > 元意文本字符
+
 <table>
 <tr>
 <td>序号</td><td>符号</td>
@@ -82,6 +84,7 @@
 var x ="aaaaaaa\nbbbbbbb";
 console.log(x);
 ```
+
 ![image](https://cloud.githubusercontent.com/assets/18028533/19919916/9100d770-a110-11e6-8bf9-695b7d772355.png)
 
 -  \r\n表示回车换行（所以我们一般使用的回车键是\r\n）
@@ -90,12 +93,14 @@ console.log(x);
 ### [点击链接豆瓣网友的回答](https://www.douban.com/note/328054605/?type=like)
 
 # 2.字符类
+
 > 中括号里面字符与字符之间代表的是或，把a|b|c都替换
 
 ```javascript
 var regExp = "a1b2c3d4".replace(/[abc]/g, "X")
 //  得到 "X1X2X3d4"
 ```
+
 > 反向类[^] ：把abc以外的字符都替换
  
 ```js
@@ -109,7 +114,9 @@ var regExp = "a1b2c3d4".replace(/[^abc]/g, "X")
 var regExp = "a1b2d3x4z9".replace(/[a-z]/g, "Q")
 //  得到 "Q1Q2Q3Q4Q9"
 ```
+
 > 连写
+
 ```js
 var regExp = "a1b2d3x4z9AAAA".replace(/[a-zA-Z]/g, "Q")
 //  得到 "Q1Q2Q3Q4Q9QQQQ"
@@ -122,17 +129,20 @@ var regExp = "a1b2d3x4z9AAAA".replace(/[a-zA-Z]/g, "Q")
 ![image](https://cloud.githubusercontent.com/assets/18028533/19920142/e6ae1420-a111-11e6-9d45-c2802854fcae.png)
 
 > 优势，精简
+
 ```javascript
 // 匹配一个abc + 数字 + 任意字符
 var regExp = /abc[0-9][^\r\n]/;
 var regExp2 = /abc\d./;
 ```
+
 # 4. 边界
 
 > (定位符)
 
 ![image](https://cloud.githubusercontent.com/assets/18028533/19920348/2a562cd4-a113-11e6-89da-ddb2767814b0.png)
 ## ^,$例子
+
 ```js
 var reg = /^abc/g;
 console.log("abcabcabcabc".replace(reg,"111"));// 111abcabcabc
@@ -206,6 +216,7 @@ var regExp = "2015-12-25".replace(/(\d{4})-(\d{2})-(\d{2})/g, "$3/$2/$1");
 // 其实是 aaa + bbbccc(原字符串没有拼接到的多余字符)
 "aaabbbccc".replace(/(aaa)/g, "$1");// aaabbbccc
 ```
+
 - 捕获的顺序
 
 > 对于括号里面嵌套的括号，其实$1,$2是被用掉了的。
