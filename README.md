@@ -115,7 +115,48 @@ var regExp = "a1b2d3x4z9AAAA".replace(/[a-zA-Z]/g, "Q")
 
 > (已经帮你写好的类)
 
-![image](https://cloud.githubusercontent.com/assets/18028533/19920142/e6ae1420-a111-11e6-9d45-c2802854fcae.png)
+<table>
+	<tr>
+		<td>字符</td>
+		<td>等价类</td>
+		<td>含义</td>
+	</tr>
+	<tr>
+		<td>.</td>
+		<td>[^\r\n]</td>
+		<td>除了回车符和换行符之外的所有字符</td>
+	</tr>
+	<tr>
+		<td>\d</td>
+		<td>[0-9]</td>
+		<td>数字字符</td>
+	</tr>
+	<tr>
+		<td>\D</td>
+		<td>[^0-9]</td>
+		<td>非数字字符</td>
+	</tr>
+	<tr>
+		<td>\s</td>
+		<td>[\t\n\xOB\f\r]</td>
+		<td>空白符</td>
+	</tr>
+	<tr>
+		<td>\S</td>
+		<td>[^\t\n\xOB\f\r]</td>
+		<td>非空白符</td>
+	</tr>
+	<tr>
+		<td>\w</td>
+		<td>[a-zA-Z_0-9]</td>
+		<td>单词字符（字母、数字下划线）</td>
+	</tr>
+	<tr>
+		<td>\W</td>
+		<td>[^a-zA-Z_0-9]</td>
+		<td>非单词字符</td>
+	</tr>
+</table>
 
 > 优势，精简
 
@@ -129,7 +170,29 @@ var regExp2 = /abc\d./;
 
 > (定位符)
 
-![image](https://cloud.githubusercontent.com/assets/18028533/19920348/2a562cd4-a113-11e6-89da-ddb2767814b0.png)
+<table>
+	<tr>
+		<td>字符</td>
+		<td>含义</td>
+	</tr>
+	<tr>
+		<td>^</td>
+		<td>以***开始</td>
+	</tr>
+	<tr>
+		<td>$</td>
+		<td>以***结束</td>
+	</tr>
+	<tr>
+		<td>\b</td>
+		<td>单词边界</td>
+	</tr>
+	<tr>
+		<td>\B</td>
+		<td>非单词边界</td>
+	</tr>
+</table>
+
 ## ^,$例子
 
 ```js
