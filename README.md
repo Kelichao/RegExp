@@ -1,17 +1,7 @@
 # 正则基础知识点
-
+- [正则在线画图工具](https://regexper.com/)
 - [正则基础知识点](https://github.com/Kelichao/RegExp/issues/1)
 - [正则demo](http://www.softwhy.com/zhengzeshili/)
-
-> 正则表达式创建方式
-
-<table>
-	<tr><td>1. 隐式创建 var regExp = /正则表达式/gim;</td></tr>
-	<tr><td>2. 显式创建 var regExp = new RegExp(正则表达式, "gim");</td></tr>
-	<tr><td>3. 标示符g全局，i忽略大小写，m代表多行搜索</td></tr>
-</table>
-
-> [正则在线画图工具](https://regexper.com/)
 
 # 1.元字符
 
