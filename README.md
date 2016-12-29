@@ -13,6 +13,7 @@
 </table>
 
 > [正则在线画图工具](https://regexper.com/)
+
 # 1.元字符
 
  _元字符是在正则表达式中有特殊含义的非字母字符（注 ”-“ 除外）_
@@ -90,6 +91,7 @@ console.log(x);
 
 # 2.字符类
 > 中括号里面字符与字符之间代表的是或，把a|b|c都替换
+
 ```javascript
 var regExp = "a1b2c3d4".replace(/[abc]/g, "X")
 //  得到 "X1X2X3d4"
@@ -100,6 +102,7 @@ var regExp = "a1b2c3d4".replace(/[abc]/g, "X")
 var regExp = "a1b2c3d4".replace(/[^abc]/g, "X")
 //  得到 "aXbXcXXX"
 ```
+
 > 范围类 [a-z]：替换a-z的字符
 
 ```javascript
@@ -113,7 +116,9 @@ var regExp = "a1b2d3x4z9AAAA".replace(/[a-zA-Z]/g, "Q")
 ```
 
 # 3. 预定义类
+
 > (已经帮你写好的类)
+
 ![image](https://cloud.githubusercontent.com/assets/18028533/19920142/e6ae1420-a111-11e6-9d45-c2802854fcae.png)
 
 > 优势，精简
@@ -123,7 +128,9 @@ var regExp = /abc[0-9][^\r\n]/;
 var regExp2 = /abc\d./;
 ```
 # 4. 边界
+
 > (定位符)
+
 ![image](https://cloud.githubusercontent.com/assets/18028533/19920348/2a562cd4-a113-11e6-89da-ddb2767814b0.png)
 ## ^,$例子
 ```js
@@ -137,7 +144,9 @@ console.log("abcabcabcabc".replace(reg,"111"));// abcabcabc111
 ![image](https://cloud.githubusercontent.com/assets/18028533/19920433/92835dc2-a113-11e6-89f6-dc1966bd549d.png)
 
 # 5.量词
+
 > (次数)
+
 ```javascript
 // 匹配数字20次
 var regExp = /\d{20}/ 
@@ -145,12 +154,15 @@ var regExp = /\d{20}/
 ![image](https://cloud.githubusercontent.com/assets/18028533/19920717/68733492-a115-11e6-89f1-5c1e152342ad.png)
 
 # 6.贪婪模式
+
 >（正则默认就是贪婪模式）
+
 ```javascript
 var regExp = "12345678".replace(/\d{3,6}/g, "X")
 //  得到 "X78" 把123456都匹配了
 ```
 # 7.非贪婪模式
+
 > （在量词后面加?即可）
 
 ```javascript
@@ -158,6 +170,7 @@ var regExp = "12345678".replace(/\d{3,6}?/g, "X")
 //  得到 "XX78" 把123,456都匹配了
 ```
 # 8.分组 "()"
+
 > 量词如果不跟分组一起使用只能度量一个字符
 
 ```javascript
@@ -176,13 +189,17 @@ var regExp = "aaabbdddaaaccddd".replace(/aaa(bb|cc)ddd/g, "X");
 //  得到 "XX"
 ```
 # 10.捕获/子表达式
+
 >（把2015-12-25 => 12/25/2015）
+
 - 捕获的话可以用于位置交换。
 ```js
 var regExp = "2015-12-25".replace(/(\d{4})-(\d{2})-(\d{2})/g, "$3/$2/$1");
 //  得到 "25/12/2015" 
 ```
+
 > 注意：如果用replace方法会把没有匹配到的字符
+
 ```js
 // replace方法会把没有匹配到的字符，会拼接到子表达式后面
 // 得到aaabbbccc原字符串 
@@ -190,7 +207,9 @@ var regExp = "2015-12-25".replace(/(\d{4})-(\d{2})-(\d{2})/g, "$3/$2/$1");
 "aaabbbccc".replace(/(aaa)/g, "$1");// aaabbbccc
 ```
 - 捕获的顺序
+
 > 对于括号里面嵌套的括号，其实$1,$2是被用掉了的。
+
 ```js
 var reg = /(^("|'))(\w+)("$)/g;
 console.log("\"123abc\"".replace(reg, "$1"));// "
@@ -217,6 +236,7 @@ console.log(x.match(reg));// ["report="]
 ### 负向前瞻
 语法为（?!pattern）,在被搜索字符串的相应位置不能有pattern部分表示的内容，也不将其作为匹配结果进行处理，当然也不会存储在缓冲区。
 # 11.反向捕获
+
 ```javascript
 var regExp = "1aa1".replace(/(\d)(\D)\2\1/g, "X")
 //  得到 "X" 
