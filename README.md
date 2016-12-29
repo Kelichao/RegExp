@@ -2,7 +2,6 @@
 
 - [正则基础知识点](https://github.com/Kelichao/RegExp/issues/1)
 - [正则demo](http://www.softwhy.com/zhengzeshili/)
-# 正则表达式基础点
 
 > 正则表达式创建方式
 
@@ -179,15 +178,8 @@ var regExp = "12345678".replace(/\d{3,6}/g, "X")
 var regExp = "12345678".replace(/\d{3,6}?/g, "X")
 //  得到 "XX78" 把123,456都匹配了
 ```
-# 8.分组 "()"
 
-> 量词如果不跟分组一起使用只能度量一个字符
-
-```javascript
-var regExp = "a1b2c3d4".replace(/([a-z]\d){3}/g, "X");
-//  得到 "Xd4" 
-```
-# 9. 正则中的或 "|"
+# 8. 正则中的或 "|"
 **方式1**
 ```js
 var regExp = "aaabbb".replace(/aaa|bbb/g, "X");
@@ -198,6 +190,16 @@ var regExp = "aaabbb".replace(/aaa|bbb/g, "X");
 var regExp = "aaabbdddaaaccddd".replace(/aaa(bb|cc)ddd/g, "X");
 //  得到 "XX"
 ```
+
+# 9.分组 "()"
+
+> 量词如果不跟分组一起使用只能度量一个字符
+
+```javascript
+var regExp = "a1b2c3d4".replace(/([a-z]\d){3}/g, "X");
+//  得到 "Xd4" 
+```
+
 # 10.捕获/子表达式
 
 >（把2015-12-25 => 12/25/2015）
