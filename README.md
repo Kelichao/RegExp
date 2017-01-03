@@ -339,6 +339,7 @@ reg =/report=(?=ccc{3})/gi;
 console.log(x.match(reg));// ["report="]
 ```
 > 负向前瞻
+
 - 语法为（?!pattern）,在被搜索字符串的相应位置不能有pattern部分表示的内容，也不将其作为匹配结果进行处理，当然也不会存储在缓冲区。
 
 # 11.反向捕获
