@@ -2,6 +2,7 @@
 - [正则在线画图工具](https://regexper.com/)
 - [正则基础知识点](https://github.com/Kelichao/RegExp/issues/1)
 - [正则demo](http://www.softwhy.com/zhengzeshili/)
+- [点击链接豆瓣网友的回答\r\n的区别](https://www.douban.com/note/328054605/?type=like)
 
 # 1.元字符
 
@@ -57,7 +58,7 @@ console.log(x);
 
 > 我们在平时使用电脑时，已经习惯了回车和换行一次搞定，敲一个回车键，即是回车，又是换行。
 
-- [点击链接豆瓣网友的回答](https://www.douban.com/note/328054605/?type=like)
+
 
 # 2.字符类
 
@@ -91,7 +92,7 @@ var regExp = "a1b2d3x4z9AAAA".replace(/[a-zA-Z]/g, "Q")
 
 # 3. 预定义类
 
-> (已经帮你写好的类)
+> 其实就是已经帮你写好的类
 
 <table>
 	<tr>
@@ -146,7 +147,7 @@ var regExp2 = /abc\d./;
 
 # 4. 边界
 
-> (定位符)
+> 边界属于定位符
 
 <table>
 	<tr>
@@ -185,17 +186,46 @@ console.log("abcabcabcabc".replace(reg,"111"));// abcabcabc111
 
 # 5.量词
 
-> (次数)
+> 出现次数
 
 ```javascript
 // 匹配数字20次
 var regExp = /\d{20}/ 
 ```
-![image](https://cloud.githubusercontent.com/assets/18028533/19920717/68733492-a115-11e6-89f1-5c1e152342ad.png)
+<table>
+	<tr>
+		<td>字符</td>
+		<td>含义</td>
+	</tr>
+	<tr>
+		<td>?</td>
+		<td>出现一次或者多次（最多出现一次）</td>
+	</tr>
+	<tr>
+		<td>+</td>
+		<td>出现一次或者多次（至少出现一次）</td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td>出现零次或多次（任意次）</td>
+	</tr>
+	<tr>
+		<td>{n}</td>
+		<td>出现n次</td>
+	</tr>
+	<tr>
+		<td>{n,m}</td>
+		<td>出现n到m次</td>
+	</tr>
+	<tr>
+		<td>{n,}</td>
+		<td>至少出现n次</td>
+	</tr>
+</table>
 
 # 6.贪婪模式
 
->（正则默认就是贪婪模式）
+> 正则默认就是贪婪模式
 
 ```javascript
 var regExp = "12345678".replace(/\d{3,6}/g, "X")
@@ -203,7 +233,7 @@ var regExp = "12345678".replace(/\d{3,6}/g, "X")
 ```
 # 7.非贪婪模式
 
-> （在量词后面加?即可）
+>  在量词后面加?即可
 
 ```javascript
 var regExp = "12345678".replace(/\d{3,6}?/g, "X")
@@ -211,12 +241,14 @@ var regExp = "12345678".replace(/\d{3,6}?/g, "X")
 ```
 
 # 8. 正则中的或 "|"
-**方式1**
+> 例一
+
 ```js
 var regExp = "aaabbb".replace(/aaa|bbb/g, "X");
 //  得到 "XX" ,没有括号就是全局
 ```
-**方式2**
+> 例二
+
 ```js
 var regExp = "aaabbdddaaaccddd".replace(/aaa(bb|cc)ddd/g, "X");
 //  得到 "XX"
@@ -233,7 +265,7 @@ var regExp = "a1b2c3d4".replace(/([a-z]\d){3}/g, "X");
 
 # 10.捕获/子表达式
 
->（把2015-12-25 => 12/25/2015）
+> 例如:把2015-12-25 => 12/25/2015
 
 - 捕获的话可以用于位置交换。
 ```js
@@ -265,10 +297,38 @@ console.log("\"123abc\"".replace(reg, "$3"));// 123abc
 `(:?cont)`
 
 # 10. 前瞻（JS不支持后顾）
-![image](https://cloud.githubusercontent.com/assets/18028533/19922007/88c4a888-a11b-11e6-87a8-1723bbc03f23.png)
+<table>
+	<tr>
+		<td>名称</td>
+		<td>正则</td>
+		<td>含义</td>
+	</tr>
+	<tr>
+		<td>正向前瞻</td>
+		<td>exp(?=assert)</td>
+		<td>如果前方匹配到这个</td>
+	</tr>
+	<tr>
+		<td>负向前瞻</td>
+		<td>exp(?!assert)</td>
+		<td>如果前方匹配不到这个</td>
+	</tr>
+	<tr>
+		<td>正向后顾</td>
+		<td>exp(?<=assert)</td>
+		<td>JavaScript不支持</td>
+	</tr>
+	<tr>
+		<td>负向后顾</td>
+		<td>exp(?< !assert)</td>
+		<td>JavaScript不支持</td>
+	</tr>
+</table>
 
-**注：前瞻只能放在正则的最后位置，后顾要放在正则最前面的位置**
-**注：前瞻与不希望被捕获的区别是不会将前瞻表达块归于匹配对象，而捕获是归属于匹配对象的**
+ > **注：前瞻只能放在正则的最后位置，后顾要放在正则最前面的位置**
+
+> **注：前瞻与不希望被捕获的区别是不会将前瞻表达块归于匹配对象，而捕获是归属于匹配对象的**
+
 ```js
 var regExp = "a2*3".replace(/\W(?=\d)/g, "X");
 //  得到 "a2X3" 
@@ -278,7 +338,8 @@ reg =/report=(?=ccc{3})/gi;
 console.log(x.match(reg));// ["report="]
 ```
 ### 负向前瞻
-语法为（?!pattern）,在被搜索字符串的相应位置不能有pattern部分表示的内容，也不将其作为匹配结果进行处理，当然也不会存储在缓冲区。
+> 语法为（?!pattern）,在被搜索字符串的相应位置不能有pattern部分表示的内容，也不将其作为匹配结果进行处理，当然也不会存储在缓冲区。
+
 # 11.反向捕获
 
 ```javascript
