@@ -11,49 +11,28 @@
 
 <table>
 <tr>
-<td>序号</td><td>符号</td>
+<td>序号</td><td>符号</td><td>序号</td><td>符号</td>
 </tr>
 <tr>
-	<td>1. </td><td>* </td>
+	<td>1. </td><td>* </td><td>2. </td><td>+ </td>
 </tr>
 <tr>
-	<td>2. </td><td>+ </td>
+	<td>3.</td> <td>?</td><td>4.</td> <td>$</td>
 </tr>
 <tr>
-	<td>3.</td> <td>?</td>
+	<td>5.</td> <td>^</td><td>6.</td> <td>.</td>
 </tr>
 <tr>
-	<td>4.</td> <td>$</td>
+	<td>7.</td> <td>|</td><td>8.</td> <td>\</td>
 </tr>
 <tr>
-	<td>5.</td> <td>^</td>
+	<td>9.</td> <td>(</td><td>10.</td> <td>)</td>
 </tr>
 <tr>
-	<td>6.</td> <td>.</td>
+	<td>11.</td> <td>{</td><td>12.</td> <td>}</td>
 </tr>
 <tr>
-	<td>7.</td> <td>|</td>
-</tr>
-<tr>
-	<td>8.</td> <td>\</td>
-</tr>
-<tr>
-	<td>9.</td> <td>(</td>
-</tr>
-<tr>
-	<td>10.</td> <td>)</td>
-</tr>
-<tr>
-	<td>11.</td> <td>{</td>
-</tr>
-<tr>
-	<td>12.</td> <td>}</td>
-</tr>
-<tr>
-	<td>13.</td> <td>[</td>
-</tr>
-<tr>
-	<td>14.</td> <td>]</td>
+	<td>13.</td> <td>[</td><td>14.</td> <td>]</td>
 </tr>
 </table>
 
@@ -192,7 +171,7 @@ var regExp2 = /abc\d./;
 	</tr>
 </table>
 
-## ^,$例子
+> ^,$例子
 
 ```js
 var reg = /^abc/g;
