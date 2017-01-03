@@ -74,12 +74,11 @@ var x ="aaaaaaa\nbbbbbbb";
 console.log(x);
 ```
 
-![image](https://cloud.githubusercontent.com/assets/18028533/19919916/9100d770-a110-11e6-8bf9-695b7d772355.png)
+>  \r\n表示回车换行（所以我们一般使用的回车键是\r\n）
 
--  \r\n表示回车换行（所以我们一般使用的回车键是\r\n）
-- 我们在平时使用电脑时，已经习惯了回车和换行一次搞定，敲一个回车键，即是回车，又是换行。
+> 我们在平时使用电脑时，已经习惯了回车和换行一次搞定，敲一个回车键，即是回车，又是换行。
 
-### [点击链接豆瓣网友的回答](https://www.douban.com/note/328054605/?type=like)
+- [点击链接豆瓣网友的回答](https://www.douban.com/note/328054605/?type=like)
 
 # 2.字符类
 
