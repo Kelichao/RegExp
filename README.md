@@ -1,11 +1,11 @@
-# 正则基础知识点
+# 正则基础知识点![image](https://cloud.githubusercontent.com/assets/18028533/21600946/ce4ef7ea-d1be-11e6-9052-1a202764043f.png)
+
 - [正则在线画图工具](https://regexper.com/)
 - [正则基础知识点](https://github.com/Kelichao/RegExp/issues/1)
 - [正则demo](http://www.softwhy.com/zhengzeshili/)
 - [点击链接豆瓣网友的回答\r\n的区别](https://www.douban.com/note/328054605/?type=like)
 
 # 1.元字符
-
  _元字符是在正则表达式中有特殊含义的非字母字符（注 ”-“ 除外）_
  
 > 元意文本字符
