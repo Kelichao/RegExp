@@ -1,6 +1,7 @@
 # 正则基础知识点![image](https://cloud.githubusercontent.com/assets/18028533/21600946/ce4ef7ea-d1be-11e6-9052-1a202764043f.png)
-
-- [正则在线画图工具](https://regexper.com/)
+![image](https://cloud.githubusercontent.com/assets/18028533/21600997/73f8b56e-d1bf-11e6-8a12-64b5afea78dc.png)
+- [正则构建工具一](https://regexper.com/)
+- [正则构建工具二](https://www.debuggex.com/)
 - [正则基础知识点](https://github.com/Kelichao/RegExp/issues/1)
 - [正则demo](http://www.softwhy.com/zhengzeshili/)
 - [点击链接豆瓣网友的回答\r\n的区别](https://www.douban.com/note/328054605/?type=like)
@@ -325,9 +326,9 @@ console.log("\"123abc\"".replace(reg, "$3"));// 123abc
 	</tr>
 </table>
 
- > **注：前瞻只能放在正则的最后位置，后顾要放在正则最前面的位置**
+> 注：前瞻只能放在正则的最后位置，后顾要放在正则最前面的位置
 
-> **注：前瞻与不希望被捕获的区别是不会将前瞻表达块归于匹配对象，而捕获是归属于匹配对象的**
+> 前瞻与不希望被捕获的区别是不会将前瞻表达块归于匹配对象，而捕获是归属于匹配对象的
 
 ```js
 var regExp = "a2*3".replace(/\W(?=\d)/g, "X");
@@ -337,8 +338,8 @@ var x = "report=ccccc11111&&&ddddd=555555&eeeee=66666";
 reg =/report=(?=ccc{3})/gi;
 console.log(x.match(reg));// ["report="]
 ```
-### 负向前瞻
-> 语法为（?!pattern）,在被搜索字符串的相应位置不能有pattern部分表示的内容，也不将其作为匹配结果进行处理，当然也不会存储在缓冲区。
+> 负向前瞻
+- 语法为（?!pattern）,在被搜索字符串的相应位置不能有pattern部分表示的内容，也不将其作为匹配结果进行处理，当然也不会存储在缓冲区。
 
 # 11.反向捕获
 
