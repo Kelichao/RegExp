@@ -48,6 +48,7 @@
 <tr><td>5. </td><td>\0 空字符</td></tr>
 <tr><td>6. </td><td>\f 换页符</td></tr>
 <tr><td>7. </td><td>\cX 与X对应的控制字符（Ctrl+X）</td></tr>
+<tr><td>8. </td><td>\s 空格</td></tr>
 </table>
 
 ```javascript
